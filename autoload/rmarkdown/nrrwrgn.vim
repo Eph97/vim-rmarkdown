@@ -5,7 +5,7 @@ function! rmarkdown#nrrwrgn#NarrowRChunk()
 	endif
 	let b:nrrw_aucmd_create = 'set ft=r'
 	let range = rmarkdown#nrrwrgn#ChunkRange()
-	exe range[0].','.range[1].'NR'
+	exe range[0].','.range[1].'NR!'
 	if exists("old_hook") 
 	    let b:nrrw_aucmd_create = old_hook
 	endif
