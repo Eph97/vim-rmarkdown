@@ -62,3 +62,19 @@ function! rmarkdown#nrrwrgn#ChunkRange(...)
     call cursor(origin_pos[1], origin_pos[2])
     return l:range
 endfunction
+
+
+" test with slimeSend
+function! rmarkdown#nrrwrgn#SlimeSend()
+    if rmarkdown#nrrwrgn#InsideRChunk() == 1
+	" if exists("b:nrrw_aucmd_create")
+	"     let old_hook = b:nrrw_aucmd_create
+	" endif
+	" let b:nrrw_aucmd_create = 'set ft=r'
+	let range = rmarkdown#nrrwrgn#ChunkRange()
+	exe range[0].','.range[1].'SlimeSend'
+	" if exists("old_hook") 
+	"     let b:nrrw_aucmd_create = old_hook
+	" endif
+    endif
+endfunction

@@ -19,3 +19,8 @@ if exists(":NR") == 2
     command! -buffer RNrrw call rmarkdown#nrrwrgn#NarrowRChunk()
     noremap <buffer> <localleader>ccn :RNrrw<cr>
 endif
+
+if exists(":SlimeSend") == 2
+    command! -buffer RSlimeSend call rmarkdown#nrrwrgn#SlimeSend()
+    noremap <buffer> <localleader><C-c><C-c> :RSlimeSend<cr>
+endif
